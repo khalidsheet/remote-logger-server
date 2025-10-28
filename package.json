@@ -1,5 +1,5 @@
 {
-  "name": "khalidsheet/remote-logger-server",
+  "name": "remote-logger-server",
   "version": "1.0.0",
   "description": "A lightweight WebSocket-based logging service that aggregates and displays logs from multiple remote applications in real-time with beautiful console formatting.",
   "type": "module",

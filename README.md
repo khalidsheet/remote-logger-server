@@ -1,35 +1,19 @@
-# Remote Logger
+# Remote Logger Server
 
 A lightweight WebSocket-based logging service that aggregates and displays logs from multiple remote applications in real-time with beautiful console formatting.
 
-## Features
-
-- 🚀 **Real-time logging** via WebSocket connections
-- 🎨 **Colored output** with timestamps for easy reading
-- 📦 **Multi-app support** - track logs from multiple applications simultaneously
-- 🔧 **Easy integration** - simple JSON message format
-- ⚡ **Lightweight** - minimal dependencies, fast startup
-- 🌐 **Configurable port** - set via environment variable
+> **Note:** This is a development tool intended for logging and debugging purposes. For production logging, consider using established logging services with authentication and data persistence.
 
 ## Installation
 
 ### Global Installation
 
 ```bash
-npm install -g remote-logger
+npm install -g remote-logger-server
 # or
-pnpm add -g remote-logger
+pnpm add -g remote-logger-server
 # or
-yarn global add remote-logger
-```
-
-### Local Development
-
-```bash
-git clone <repository-url>
-cd remote-logger
-pnpm install
-pnpm build
+yarn global add remote-logger-server
 ```
 
 ## Usage
@@ -38,13 +22,22 @@ pnpm build
 
 ```bash
 # Using default port (4455)
-remote-logger
+remote-logger-server
 
 # Using custom port
-PORT=8080 remote-logger
+PORT=8080 remote-logger-server
 ```
 
-Or if running locally:
+### Local Development
+
+```bash
+git clone https://github.com/khalidsheet/remote-logger-server.git
+cd remote-logger-server
+pnpm install
+pnpm build
+```
+
+### Running locally:
 
 ```bash
 pnpm start
@@ -61,15 +54,19 @@ The server will start and display:
 
 ### Sending Logs from Your Application
 
-Connect to the WebSocket server and send JSON messages in the following format:
+For frontend applications (React, Vue, Angular, etc.), please use the dedicated **client package**. The client package provides a simplified API and is optimized for browser environments.
 
-```javascript
-{
-  "app": "MyApp",           // Application name (optional, defaults to "Default")
-  "message": ["Log text"],  // Array of message parts
-  "caller": "path/to/file.js:123"  // Source location (optional)
-}
+**Install the client package:**
+
+```bash
+npm install remote-logger-client
+# or
+pnpm add remote-logger-client
+# or
+yarn add remote-logger-client
 ```
+
+> **Note:** The examples below show raw WebSocket usage for backend/Node.js applications. For frontend applications, use the client package instead.
 
 ### Example Client
 
@@ -140,7 +137,7 @@ Builds the project using `tsdown` and outputs to the `dist/` directory in both C
 ### Project Structure
 
 ```
-remote-logger/
+remote-logger-server/
 ├── src/
 │   └── main.ts          # Main server implementation
 ├── dist/                # Built files
@@ -168,8 +165,6 @@ Khalid M. Sheet (khalid.m.sheet@gmail.com)
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+## Contributions are welcome! Feel free to open issues or submit pull requests.
 
----
-
-**Note:** This is a development tool intended for logging and debugging purposes. For production logging, consider using established logging services with authentication and data persistence.
+Happy Hacking!
