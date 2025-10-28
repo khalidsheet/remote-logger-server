@@ -1,0 +1,40 @@
+{
+  "name": "khalidsheet/remote-logger-server",
+  "version": "1.0.0",
+  "description": "A lightweight WebSocket-based logging service that aggregates and displays logs from multiple remote applications in real-time with beautiful console formatting.",
+  "type": "module",
+  "main": "./src/main.ts",
+  "bin": {
+    "remote-logger-server": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "start": "node dist/main.js"
+  },
+  "keywords": [
+    "logger",
+    "remote",
+    "logging",
+    "websocket"
+  ],
+  "author": "Khalid M. Sheet <khalid.m.sheet@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@types/chalk": "^2.2.4",
+    "@types/node": "^24.9.2",
+    "@types/ws": "^8.18.1",
+    "eslint": "^9.38.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "tsdown": "^0.15.11",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "ws": "^8.18.3"
+  }
+}
